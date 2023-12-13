@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Flower center -->
+  <circle cx="100" cy="100" r="15" fill="#FFD700" />
+
+  <!-- Slimmer Petals -->
+  <ellipse cx="100" cy="50" rx="20" ry="35" fill="#FF1493" transform="rotate(360 100 100)"
+    d="M90 50 C75 40,70 35,60 50 Q70 40,80 50 Q65 60,100 80 Q135 60,120 50 Q130 40,140 50 Q130 55, 100 50 Z"
+  />
+
+
+  <!-- Larger center circle -->
+  <circle cx="95" cy="95" r="2" fill="black" />
+  <circle cx="105" cy="95" r="2" fill="black" />
+  <path d="M95 105 Q100 100, 105 105" fill="transparent" stroke="black" />
+</svg>

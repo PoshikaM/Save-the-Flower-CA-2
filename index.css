@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url(./assets/image\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.heading{
+    margin-top: 150px;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+}
+
+/* for the flower and button */
+.start{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+    align-items: center;
+}
+
+/* for the button */
+.start button{
+    /* height: 50px; */
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: x-large;
+    background-color: #ffcc00;
+    font-weight: bold;
+    margin-right: 100px;
+}
+
+.start button:hover{
+    background-color: #ffd941;
+}
+
+/* @media(max-width: 600px){
+    .start{
+        display: block;
+    }
+} */

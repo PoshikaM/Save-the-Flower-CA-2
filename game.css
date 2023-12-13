@@ -1,0 +1,103 @@
+/* for entire page */
+*{
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* for the body */
+body{
+    background-image: url(https://img.freepik.com/free-vector/watercolor-english-letter-wallpaper-with-playful-design_53876-100408.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+/* for the main part of the game */
+.mainGameBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #93cb9a;
+    /* min-height: 400px; */
+    border-radius: 10px;
+    gap: 40px;
+    padding: 40px 30px;
+}
+
+/* for the list i.e dashes */
+.dashes-list{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* for each seperate dashes */
+ .dash{
+    width: 25px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.dashes-list .guessed{
+    border-color: transparent;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    font-size: larger;
+    font-weight: bolder;
+}
+
+/* for hint and incorrect guess */
+.hint ,.incorrectGuess{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:medium;
+}
+
+/* .incorrectGuess{
+    color: red;
+} */
+
+/* for alphabets entirely */
+.alphabets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: -20px;
+}
+
+/* for each alphabes button */
+.alphabets button{
+    padding: 6px 0;
+    width: calc(100% / 10 - 5px); 
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+}
+
+.alphabets button:hover{
+    background-color: rgb(58, 58, 58);
+}
+
+.alphabets button[disabled]{
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@media(max-width: 600px){
+    .mainGameBox{
+        flex-direction: column;
+    }
+}
+
+
+
+
+
