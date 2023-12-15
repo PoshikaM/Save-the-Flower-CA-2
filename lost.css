@@ -1,9 +1,11 @@
+/* for entire page */
 *{
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
 
+/* for the body */
 body{
     background-image: url(https://img.freepik.com/free-vector/watercolor-english-letter-wallpaper-with-playful-design_53876-100408.jpg);
     background-repeat: no-repeat;
@@ -16,6 +18,7 @@ img{
     max-width: 200px;
 }
 
+/* for the entire div to make background blur */
 .gameOver{
     background-color: rgba(0, 0, 0, 0.699);
     position: fixed;
@@ -26,6 +29,7 @@ img{
     justify-content: center;
 }
 
+/* actual gameover content */
 .out{
     padding: 30px 0px;
     background-color: #b0627a;
@@ -35,19 +39,29 @@ img{
     border-radius: 10px;
 }
 
+/* to give space inbetween img, para and h3 tag */
 .out img,h3, p{
     margin-bottom: 20px;
+    color: white;
 }
 
+/* for the play again button */
 .out button{
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     font-size: 20px;
-    background-color: #ffcc00;
+    background-color: #03ffa3;
     font-weight: 750;
 }
 
+/* if the player hover over the play again button */
 .out button:hover{
     background-color: #ffd941;    
+}
+
+/* for the correct word */
+#correctWord{
+    color: #03ffa3;
+    font-weight: 700;
 }

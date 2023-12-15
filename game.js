@@ -1,3 +1,16 @@
+let backgroundMusic = new Audio('./assets/music.mp3');
+    backgroundMusic.play();
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.2;
+
+// let alphabets = document.querySelector(".alphabets")
+// alphabets.addEventListener('click', function(){
+//     let ClickSound = new Audio('./assets/mouse-click.mp3')
+//     ClickSound.play();
+//     ClickSound.volume = 0.3;
+// })
+
+// list of words that will be generated randomly
 let listOfWords = [
     {
         word : "PUZZLE",
@@ -74,6 +87,8 @@ let getRandomWord = () => {
     eachLetter.innerHTML = word.split("").map(() => `<li class="dash"></li>`).join("");
     console.log(word);
     randomWord = word;
+    // setting the word to local storage
+    localStorage.setItem("chooseword",word);
 }
 getRandomWord()
 
