@@ -3,12 +3,12 @@ let backgroundMusic = new Audio('./assets/music.mp3');
     backgroundMusic.loop = true;
     backgroundMusic.volume = 0.2;
 
-// let alphabets = document.querySelector(".alphabets")
-// alphabets.addEventListener('click', function(){
-//     let ClickSound = new Audio('./assets/mouse-click.mp3')
-//     ClickSound.play();
-//     ClickSound.volume = 0.3;
-// })
+let alphabets = document.querySelector(".alphabets")
+alphabets.addEventListener('click', function(){
+    let ClickSound = new Audio('./assets/clickSound.mp3')
+    ClickSound.play();
+    ClickSound.volume = 0.9;
+})
 
 // list of words that will be generated randomly
 let listOfWords = [
@@ -70,34 +70,37 @@ let listOfWords = [
     }
 ]
 
-// creating keyboard
-let keyboard = document.querySelector(".alphabets")
-let eachLetter = document.querySelector(".dashes-list")
-let incorrectguess = document.querySelector(".incorrectGuess b")
-let flowerImg = document.querySelector(".flower img")
+// selecting html elements in a variable
+let keyboard = document.querySelector(".alphabets");
+let eachLetter = document.querySelector(".dashes-list");
+let hintWord =  document.querySelector(".hint b");
+let incorrectguess = document.querySelector(".incorrectGuess b");
+let flowerImg = document.querySelector(".flower img");
 let randomWord;
 let wrongAns = 0;
 let rightLetters = [];
 const correctAns = 6;
 
-// creating keyboard
+// generating random word function
 let getRandomWord = () => {
     let {word,hint} = listOfWords[Math.floor(Math.random()*listOfWords.length)]
-    document.querySelector(".hint b").innerText = hint;
+    hintWord.innerText = hint;
     eachLetter.innerHTML = word.split("").map(() => `<li class="dash"></li>`).join("");
-    console.log(word);
+    // console.log(word);
     randomWord = word;
     // setting the word to local storage
     localStorage.setItem("chooseword",word);
 }
 getRandomWord()
 
-
+// keep track of the player input 
 let Play = (button, letterClicked) => {
     if(randomWord.includes(letterClicked)){
         [...randomWord].forEach((letter, index) => {
+            // if clicked leter is in the word then push it to the array
             if(letter === letterClicked){
                 rightLetters.push(letter)
+                // displaying the correctly guessed letter and adds a style "guessed" to it for styling
                 eachLetter.querySelectorAll("li")[index].innerText = letter;
                 eachLetter.querySelectorAll("li")[index].classList.add("guessed")
             }
@@ -111,6 +114,7 @@ let Play = (button, letterClicked) => {
     button.disabled =true;
     incorrectguess.innerText = `${wrongAns} / ${correctAns}`;
 
+    // if the count of wrong ans is equal to correct ans then game over
     if(wrongAns == correctAns){
         window.location.href = 'lost.html'
     }
@@ -129,20 +133,3 @@ for(let i=65; i<=90; i++){
 }
 // console.log(keyboard)
 // console.log(eachLetter)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

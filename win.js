@@ -11,7 +11,7 @@ document.getElementById("username").innerHTML = localStorage.getItem("username")
 let winningGame = new Audio('./assets/winningSound.mp3');
 winningGame.play();
 winningGame.volume = 0.3;
-winningGame.loop = true;
+// winningGame.loop = true;
 
 // an array of phrases
 let Phrase = [

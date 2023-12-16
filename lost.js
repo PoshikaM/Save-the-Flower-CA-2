@@ -11,7 +11,7 @@ document.getElementById("username").innerHTML = localStorage.getItem("username")
 let lostSound = new Audio('./assets/lostSound.mp3')
 lostSound.play();
 lostSound.volume = 0.3;
-lostSound.loop = true;
+// lostSound.loop = true;
 
 // an array of phrases
 let Phrase = [
