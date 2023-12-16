@@ -1,8 +1,10 @@
+// giving background music
 let backgroundMusic = new Audio('./assets/music.mp3');
     backgroundMusic.play();
     backgroundMusic.loop = true;
     backgroundMusic.volume = 0.2;
 
+// giving click sound when an alphabet is clciked 
 let alphabets = document.querySelector(".alphabets")
 alphabets.addEventListener('click', function(){
     let ClickSound = new Audio('./assets/clickSound.mp3')
@@ -93,10 +95,24 @@ let getRandomWord = () => {
 }
 getRandomWord()
 
+
+// creating the keyboard
+// this for loop iterats over the ASCII value and creates a button for each letter and append it to the keyboard
+for(let i=65; i<=90; i++){
+    let button = document.createElement("button");
+    button.innerText = String.fromCharCode(i); // coverts the ASCII code to the character (for range i)
+    keyboard.appendChild(button); // appending the button to the keyboard (i.e class "alphabtes")
+    button.addEventListener('click', e => Play(e.target, String.fromCharCode(i)));
+    // console.log(buttons)
+}
+// console.log(keyboard)
+// console.log(eachLetter)
+
+
 // keep track of the player input 
 let Play = (button, letterClicked) => {
     if(randomWord.includes(letterClicked)){
-        [...randomWord].forEach((letter, index) => {
+        [...randomWord].forEach((letter, index) => { //This creates an array containing each letter of the randomWord
             // if clicked leter is in the word then push it to the array
             if(letter === letterClicked){
                 rightLetters.push(letter)
@@ -122,14 +138,3 @@ let Play = (button, letterClicked) => {
         window.location.href = 'win.html'
     }
 }
-
-
-for(let i=65; i<=90; i++){
-    let button = document.createElement("button");
-    button.innerText = String.fromCharCode(i);
-    keyboard.appendChild(button);
-    button.addEventListener('click', e => Play(e.target, String.fromCharCode(i)));
-    // console.log(buttons)
-}
-// console.log(keyboard)
-// console.log(eachLetter)
